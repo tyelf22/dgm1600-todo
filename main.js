@@ -1,15 +1,15 @@
 //assign elements to variables
-let newTask = document.querySelector('#new-task');
-let addTaskBtn = document.querySelector('#addTask');
+const newTask = document.querySelector('#new-task');   //use of const and let variables
+const addTaskBtn = document.querySelector('#addTask');
 
-let toDoUl = document.querySelector(".todo-list ul");
-let completeUl =  document.querySelector(".complete-list ul");
+const toDoUl = document.querySelector(".todo-list ul");
+const completeUl =  document.querySelector(".complete-list ul");
 
 
 //define functions
 
 //task list item
-let createNewTask = (task) => {
+let createNewTask = (task) => {             // use of proper arrow functions
   console.log("Creating new task...");
   
   //create new list item
@@ -35,7 +35,7 @@ let createNewTask = (task) => {
 
 
 //add new task
-let addTask = () => {
+let addTask = () => {                       
   console.log("Adding new task...");
   //Inputted text into a let
   let listItem = createNewTask(newTask.value);
