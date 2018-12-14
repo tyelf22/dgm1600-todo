@@ -1,4 +1,4 @@
-//SELECT ELEMENTS AND ASSIGN THEM TO VARS
+//assign elements to variables
 let newTask = document.querySelector('#new-task');
 let addTaskBtn = document.querySelector('#addTask');
 
@@ -6,46 +6,54 @@ let toDoUl = document.querySelector(".todo-list ul");
 let completeUl =  document.querySelector(".complete-list ul");
 
 
-//CREATE FUNCTIONS
+//define functions
 
-//CREATING THE ACTUAL TASK LIST ITEM
+//task list item
 let createNewTask = (task) => {
-  console.log("Creating task...");
+  console.log("Creating new task...");
   
-  //SET UP THE NEW LIST ITEM
+  //create new list item
   let listItem = document.createElement("li"); //<li>
   let checkBox = document.createElement("input"); //checkbox
   let label = document.createElement("label"); // <label>
   
   
-  //PULL THE INPUTED TEXT INTO LABEL
+  //input text into a label
   label.innerText = task;
   
-  //ADD PROPERTIES
+  //add check property
   checkBox.type = "checkbox";
+  checkBox.className = "checkmark"
   
-  //ADD ITEMS TO THE LI
+  //add the items to the list
   listItem.appendChild(checkBox);
   listItem.appendChild(label);
-  //EVERYTHING PUT TOGETHER
+  //merge together
   return listItem;  
   
 };
 
-//ADD THE NEW TASK INTO ACTUAL INCOMPLETE LIST
+
+//add new task
 let addTask = () => {
-  console.log("Adding task...");
-  //FOR CLARITY, GRAB THE INPUTTED TEXT AND STORE IT IN A let
+  console.log("Adding new task...");
+  //Inputted text into a let
   let listItem = createNewTask(newTask.value);
-  //ADD THE NEW LIST ITEM TO LIST
+  //new list item in list
   toDoUl.appendChild(listItem); 
-  //CLEAR THE INPUT
+  //clear
   newTask.value="";
   
-  //BIND THE NEW LIST ITEM TO THE INCOMPLETE LIST
+  //put items together in completed
   bindIncompleteItems(listItem, completeTask);
 
 };
+
+//delete previous item
+let delItem = () => {
+  var list = document.querySelector("ul");
+  list.removeChild(list.childNodes[0]);
+}
 
 
 addTaskBtn.addEventListener("click", addTask);

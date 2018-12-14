@@ -6,26 +6,27 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="mystyle.css">
+        <link href="https://fonts.googleapis.com/css?family=Cabin+Condensed" rel="stylesheet">
     </head>
     <body>
         <section class="container">
   
-            <h1>My TASK LIST</h1>
+            <h1>My To Do's</h1>
             
             <div class="new-task-container box">
             
-            <label for="new-task">Add New Item</label>
-            <input type="text" id="new-task">
+            <label for="new-task">Add New Task:</label>
+            <input class="myText" type="text" id="new-task" placeholder="New Task...">
               <button id="addTask">Add Item</button>
               
-              <button id="clear">Clear</button>
+              <button id="delButton" onclick="delItem()">Delete Item</button>
             
             </div>
             
             <div class="todo-list box">
             
               <h2>To Do:</h2>
-              <h3>Click When Complete</h3>
+              <h3>Check When Complete</h3>
               <ul>
                 
               </ul>
